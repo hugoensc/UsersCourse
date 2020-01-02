@@ -16,13 +16,16 @@ namespace Users.Controllers
         //public IActionResult Index(String data)
         //[Route("/Userss/Hugo")]
         //[Route("/Userss/Enrique/{data}")]
-        [Route("[controller]/[action]/{data}")]
-        public IActionResult Index(String data, int age)
+        //[Route("[controller]/[action]/{data}")]
+        //[HttpGet("[controller]/[action]/{data:int}")]
+        [HttpGet("[controller]/[action]/{data:double}")]
+        //public IActionResult Index(String data, int age)
+        public IActionResult Index(double data)
         {
-            String datos = data + " " + age;
+            //String datos = data + " " +  age;
             //ViewData["id"] = data + " " + age;
             //ViewData["id"] = data;
-            return View("Index", datos);
+            return View("Index", data);
         }
 
         public IActionResult Index()
