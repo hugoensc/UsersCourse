@@ -53,7 +53,7 @@ namespace Users
             }
 
             //app.UseStatusCodePages();
-            app.UseStatusCodePages("text/plain", "Pagina de codigos de estado, codigo de estado: {0}");
+            //app.UseStatusCodePages("text/plain", "Pagina de codigos de estado, codigo de estado: {0}");
 
             //app.UseStatusCodePages(async context => {
             //    await context.HttpContext.Response.WriteAsync(
@@ -61,6 +61,15 @@ namespace Users
             //        context.HttpContext.Response.StatusCode
             //        );
             //});
+
+            /*----------Segunda Parte----------*/
+            //app.UseStatusCodePagesWithRedirects("/Users/Method?code={0}");
+
+            //app.UseStatusCodePagesWithReExecute("/Users/Method", "?code={0}");
+            
+            //app.UseStatusCodePagesWithReExecute("/Home/Error", "?code={0}");
+
+            app.UseStatusCodePagesWithReExecute("/Home/Error", "?statusCode={0}");
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();

@@ -38,10 +38,19 @@ namespace Users.Controllers
         //    return View();
         //}
 
-        [HttpGet("[controller]/[action]",  Name = "Hugo")]
-        public IActionResult Method(int age, String name)
+        //[HttpGet("[controller]/[action]",  Name = "Hugo")]
+        //public IActionResult Method(int age, String name)
+        //{
+        //    var data = $"Nombre {name} : Edad {age}";
+        //    return View("Index", data);
+        //}
+
+
+        /*----------Segunda Parte----------*/
+        [HttpGet("[controller]/[action]", Name = "Hugo")]
+        public IActionResult Method(int code)
         {
-            var data = $"Nombre {name} : Edad {age}";
+            var data = $"Código de estado {code}";
             return View("Index", data);
         }
     }
