@@ -18,17 +18,26 @@ namespace Users.Controllers
         //[Route("/Userss/Enrique/{data}")]
         //[Route("[controller]/[action]/{data}")]
         //[HttpGet("[controller]/[action]/{data:int}")]
-        [HttpGet("[controller]/[action]/{data:double}")]
+        //[HttpGet("[controller]/[action]/{data:double}")]
         //public IActionResult Index(String data, int age)
         public IActionResult Index(double data)
         {
+            //var url = Url.Action("Method", "Hugo");
+            var url = Url.Action("Method", "Users");
             //String datos = data + " " +  age;
             //ViewData["id"] = data + " " + age;
             //ViewData["id"] = data;
-            return View("Index", data);
+            //return View("Index", data);
+            //return Content(url);
+            return Redirect(url);
         }
 
-        public IActionResult Index()
+        //public IActionResult Index()
+        //{
+        //    return View();
+        //}
+
+        public IActionResult Method()
         {
             return View();
         }
