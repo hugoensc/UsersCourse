@@ -20,6 +20,7 @@ namespace Users.Controllers
 
         public IActionResult Index()
         {
+            throw new Exception("This is some exception!!!");
             return View();
         }
 
@@ -38,6 +39,10 @@ namespace Users.Controllers
                 {
                     RequestId = Convert.ToString(statusCode)
                 };
+            }
+            else
+            {
+
             }
             return View(error);
             //return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
