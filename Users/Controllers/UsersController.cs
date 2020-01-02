@@ -6,13 +6,17 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Users.Controllers
 {
-    [Route("/Nombre")]
+    //[Route("/Users")]
+    //[Route("[controller]/[action]")]
+    //[Route("[controller]")]
     public class UsersController : Controller
     {
         //[HttpGet]
         //public IActionResult Index(int id)
         //public IActionResult Index(String data)
-        [Route("/Nombre/Hugo")]
+        //[Route("/Userss/Hugo")]
+        //[Route("/Userss/Enrique/{data}")]
+        [Route("[controller]/[action]/{data}")]
         public IActionResult Index(String data, int age)
         {
             String datos = data + " " + age;
