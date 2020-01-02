@@ -23,12 +23,13 @@ namespace Users.Controllers
         public IActionResult Index(double data)
         {
             //var url = Url.Action("Method", "Hugo");
-            var url = Url.Action("Method", "Users");
+            //var url = Url.Action("Method", "Users", new {  age = 28, name = "Hugo"});
             //String datos = data + " " +  age;
             //ViewData["id"] = data + " " + age;
             //ViewData["id"] = data;
             //return View("Index", data);
             //return Content(url);
+            var url = Url.RouteUrl("Hugo", new { age = 28, name = "Enrique" });
             return Redirect(url);
         }
 
@@ -37,9 +38,11 @@ namespace Users.Controllers
         //    return View();
         //}
 
-        public IActionResult Method()
+        [HttpGet("[controller]/[action]",  Name = "Hugo")]
+        public IActionResult Method(int age, String name)
         {
-            return View();
+            var data = $"Nombre {name} : Edad {age}";
+            return View("Index", data);
         }
     }
 }
