@@ -103,6 +103,7 @@ namespace Users
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapAreaControllerRoute("Users", "User", "{controller=User}/{action=User}/{id?}");
                 endpoints.MapRazorPages();
             });
         }
