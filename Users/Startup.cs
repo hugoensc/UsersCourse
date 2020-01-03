@@ -45,24 +45,24 @@ namespace Users
             if (env.IsDevelopment())
             {
                 // ----------Tercera parte manejo de errores----------
-                //app.UseDeveloperExceptionPage();
-                //app.UseDatabaseErrorPage();}
+                app.UseDeveloperExceptionPage();
+                app.UseDatabaseErrorPage();
 
-                // New
-                //app.UseExceptionHandler(options => {
-                //    options.Run(async context => {
-                //        context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-                //        context.Response.ContentType = "text/html";
-                //        var ex = context.Features.Get<IExceptionHandlerFeature>();
-                //        if (ex != null)
-                //        {
-                //            var error = $"<h1>Error: {ex.Error.Message}</h1>{ex.Error.StackTrace}";
-                //            await context.Response.WriteAsync(error).ConfigureAwait(false);
-                //        }
-                //    });
-                //});
+            // New
+            //app.UseExceptionHandler(options => {
+            //    options.Run(async context => {
+            //        context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+            //        context.Response.ContentType = "text/html";
+            //        var ex = context.Features.Get<IExceptionHandlerFeature>();
+            //        if (ex != null)
+            //        {
+            //            var error = $"<h1>Error: {ex.Error.Message}</h1>{ex.Error.StackTrace}";
+            //            await context.Response.WriteAsync(error).ConfigureAwait(false);
+            //        }
+            //    });
+            //});
 
-                app.UseExceptionHandler("/Home/Error");
+            //app.UseExceptionHandler("/Home/Error");
             }
             else
             {
