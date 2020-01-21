@@ -26,6 +26,18 @@ namespace Users.Areas.User.Pages.Account
             [EmailAddress]
             [Display(Name = "Email")]
             public String Email { get; set; }
+
+            [Required]
+            [DataType(DataType.Password)]
+            [Display(Name = "Password")]
+            [StringLength(100, ErrorMessage = "The number of characters in {0} must be at least {2}", MinimumLength = 6)]
+            public String Password { get; set; }
+
+            [Required]
+            [DataType(DataType.Password)]
+            [Display(Name = "Confirm Password")]
+            [Compare("Password", ErrorMessage = "The Password and Confirmation Password do not match.")]
+            public String ConfirmPassword { get; set; }
         }
     }
 }
