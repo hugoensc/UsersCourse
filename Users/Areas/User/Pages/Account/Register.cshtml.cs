@@ -39,5 +39,11 @@ namespace Users.Areas.User.Pages.Account
             [Compare("Password", ErrorMessage = "The Password and Confirmation Password do not match.")]
             public String ConfirmPassword { get; set; }
         }
+
+        public IActionResult OnPost()
+        {
+            var data = Input;
+            return Page();
+        }
     }
 }
