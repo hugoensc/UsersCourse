@@ -22,22 +22,25 @@ namespace Users.Areas.User.Pages.Account
 
         public class InputModel
         {
-            [Required]
+            [Required(ErrorMessage = "The Email field is Required!")]
             [EmailAddress]
             [Display(Name = "Email")]
             public String Email { get; set; }
 
-            [Required]
+            [Required(ErrorMessage = "The Password field is Required!")]
             [DataType(DataType.Password)]
             [Display(Name = "Password")]
             [StringLength(100, ErrorMessage = "The number of characters in {0} must be at least {2}", MinimumLength = 6)]
             public String Password { get; set; }
 
-            [Required]
+            [Required(ErrorMessage = "The Confirm Password field is requiered!")]
             [DataType(DataType.Password)]
             [Display(Name = "Confirm Password")]
             [Compare("Password", ErrorMessage = "The Password and Confirmation Password do not match.")]
             public String ConfirmPassword { get; set; }
+
+            [Required]
+            public String ErrorMessage { get; set; }
         }
 
         public IActionResult OnPost()
@@ -45,6 +48,11 @@ namespace Users.Areas.User.Pages.Account
             if (ModelState.IsValid)
             {
 
+            }
+            else
+            {
+                // Se pasa como parametro el nombre del Span
+                ModelState.AddModelError("Input.Email", "Se ha generado un error en el Servidor");
             }
             var data = Input;
             return Page();
