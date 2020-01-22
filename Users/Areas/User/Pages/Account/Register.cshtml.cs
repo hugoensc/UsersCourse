@@ -39,7 +39,7 @@ namespace Users.Areas.User.Pages.Account
             [Compare("Password", ErrorMessage = "The Password and Confirmation Password do not match.")]
             public String ConfirmPassword { get; set; }
 
-            [Required]
+            //[Required]
             public String ErrorMessage { get; set; }
         }
 
@@ -49,12 +49,12 @@ namespace Users.Areas.User.Pages.Account
             {
 
             }
-            else
-            {
-                // Se pasa como parametro el nombre del Span
-                ModelState.AddModelError("Input.Email", "Se ha generado un error en el Servidor");
-            }
-            var data = Input;
+            //else
+            //{
+            //    // Se pasa como parametro el nombre del Span
+            //    ModelState.AddModelError("Input.Email", "Se ha generado un error en el Servidor");
+            //}
+            //var data = Input;
             return Page();
         }
     }
